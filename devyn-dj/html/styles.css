@@ -1,0 +1,30 @@
+div#q-loading-bar { display: none!important; } /* makes sure there's no ajax load from quasar */
+::-webkit-scrollbar { display: none!important; } /* makes sure there's no ugly scrollbar on menu*/
+
+.dj-container {
+    display: none;
+    background: rgb(30 30 30)!important; 
+    position: absolute; 
+    width: 50%; 
+    top: 45%; 
+    left: 50%; 
+    transform: translate(-50%,-50%);
+    /* min-width: 250px;
+    max-height: 800px; */
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.yt-link {
+    width: 930px !important;
+}
+
+.track {
+    background: rgb(30 30 30)!important; 
+    display: none; 
+    position:absolute;
+    top: 10%;
+    right: 20;
+    border-radius: 4px;
+}

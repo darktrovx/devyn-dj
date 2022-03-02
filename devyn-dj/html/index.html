@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.prod.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.13.0/css/all.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/quasar@2.1.0/dist/quasar.umd.prod.js" defer></script>
+        <script src="app.js" defer></script>
+    </head>
+    <body>
+        <div class="track">
+            <div id="waveform"></div>
+        </div>
+        
+        <div class="dj-container">
+            <q-item borderless tag="label">
+                <q-item-section avatar>
+                    <q-input class="yt-link" @update:model-value="LinkUpdate($event)" filled square v-model="text" color="white" label-color="white" hint-color="white" hint="Enter Youtube Link" />
+                </q-item-section>
+            </q-item>
+            <q-item borderless tag="label">
+                <q-item-section>
+                    <q-btn color="blue" label="Play" v-on:click="PlaySong($event)" />
+                </q-item-section>
+                <q-item-section>
+                    <q-btn color="green" label="Resume" v-on:click="ResumeSong($event)" />
+                </q-item-section>
+                <q-item-section>
+                    <q-btn color="red" label="Pause" v-on:click="PauseSong($event)" />
+                </q-item-section>
+                <q-item-section>
+                    <q-slider @update:model-value="VolumeAdjust($event)" v-model="volume" :min="1" :max="100" label-always :label-value="'Volume: ' + volume" color="purple" />
+                </q-item-section>
+            </q-item>
+        </div>
+    </body>
+</html>
